@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Eberechukwu Prosper Chibuike - student portfolio and academic management website (COS 106).">
+<title>Academic Planner | Eberechukwu Prosper Chibuike</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="container nav-bar" aria-label="Main navigation">
+    <a class="logo" href="index.html">Eberechukwu <span>Prosper</span> Chibuike</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About Me</a></li><li><a href="projects.html">Projects</a></li><li><a href="planner.html" class="active" aria-current="page">Academic Planner</a></li><li><a href="contact.html">Contact</a></li></ul>
+  </nav>
+</header>
+<main>
+
+<div class="page-title"><div class="container"><h1>Academic Planner</h1><p>Add tasks, tick them off when done, or delete them</p></div></div>
+
+<section>
+  <div class="container">
+    <p class="lead">Staying organised is one of the biggest challenges for any student. I built this planner to help me keep track of assignments, revision, projects and deadlines in one simple place. Use it to plan your own study tasks too.</p>
+    <div class="planner">
+      <form class="task-form" id="taskForm" novalidate>
+        <input type="text" id="taskInput" placeholder="e.g. Submit COS 106 project" aria-label="Task description" maxlength="120">
+        <select id="priority" aria-label="Priority">
+          <option value="High">High</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="Low">Low</option>
+        </select>
+        <input type="date" id="dueDate" aria-label="Due date">
+        <button class="btn" type="submit">Add Task</button>
+      </form>
+      <p class="error" id="taskError" role="alert"></p>
+      <div class="stats">
+        <span>Total: <strong id="total">0</strong></span>
+        <span>Completed: <strong id="completed">0</strong></span>
+        <span>Pending: <strong id="pending">0</strong></span>
+      </div>
+      <div class="filters" role="group" aria-label="Filter tasks">
+        <button type="button" class="on" data-filter="all">All</button>
+        <button type="button" data-filter="pending">Pending</button>
+        <button type="button" data-filter="done">Completed</button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <h2>How to Use the Planner</h2>
+    <ol class="steps prose">
+      <li><strong>Add a task.</strong> Type what you need to do, choose a priority (High, Medium or Low), optionally pick a due date, then press <em>Add Task</em>.</li>
+      <li><strong>Mark it completed.</strong> Tick the checkbox beside a task when you finish it. The task is crossed out and the counters update instantly.</li>
+      <li><strong>Delete a task.</strong> Press the <em>Delete</em> button to remove a task you no longer need.</li>
+      <li><strong>Filter your list.</strong> Use <em>All</em>, <em>Pending</em> or <em>Completed</em> to focus on what matters right now.</li>
+    </ol>
+    <p class="prose">Your tasks are saved in your browser, so they will still be there when you come back, as long as you use the same device and browser.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <h2>Study Planning Tips</h2>
+    <div class="grid-3">
+      <article class="card"><h3>Prioritise Wisely</h3><p>Handle high-priority and near-deadline tasks first. Urgent work done early removes stress and leaves time for quality.</p></article>
+      <article class="card"><h3>Break Big Tasks Down</h3><p>Instead of &ldquo;Finish project&rdquo;, add smaller steps such as &ldquo;Design homepage&rdquo; or &ldquo;Test contact form&rdquo;. Small wins build momentum.</p></article>
+      <article class="card"><h3>Review Daily</h3><p>Spend five minutes each morning checking your list. A quick review keeps you focused and prevents missed deadlines.</p></article>
+    </div>
+    <h2 class="mt">How It Works</h2>
+    <p class="prose">The planner keeps all tasks in a JavaScript array of objects. Each time you add, complete or delete a task, the array is updated and the list on the page is redrawn using DOM manipulation. Event listeners respond to your clicks and form submissions, and the totals are recalculated automatically.</p>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year">2026</span> Eberechukwu Prosper Chibuike &ndash; Introduction to Web Technologies &middot; MIVA Open University</p>
+    <p>Designed and built with HTML, CSS and JavaScript.</p>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/planner.js"></script>
+</body>
+</html>
